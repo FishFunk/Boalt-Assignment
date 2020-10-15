@@ -1,0 +1,28 @@
+.ModalWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Modal {
+    margin-top: 10%;
+    max-width: 400px;
+    height: 320px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #CCCCCC;
+    border: 1px solid #F2F2F2;
+    opacity: 1;
+    padding: 50px;
+}
+
+.Title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.SignUpWrapper {
+    width: 400px;
+    text-align: right;
+}
