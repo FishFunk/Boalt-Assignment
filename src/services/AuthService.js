@@ -16,10 +16,14 @@ class AuthService {
         const userListJson = localStorageService.getItem(localStorageKeys.userList) || '[]';
         let userList = JSON.parse(userListJson);
 
+        console.log(email, pwd);
+
         // Check if user exists
         for(let user of userList){
             if(user.email === email && user.pwd === pwd){
                 // User credentials are a match
+                const jsonUser = JSON.stringify(user);
+                localStorageService.setItem(localStorageKeys.userKey, jsonUser);
                 return user;
             }
         }
@@ -44,10 +48,15 @@ class AuthService {
             }
         }
 
-        // Store new user data
+        // Set current user
+        const jsonUser = JSON.stringify(user);
+        localStorageService.setItem(localStorageKeys.userKey, jsonUser);
+
+        // Update user list
         userList.push(userData);
         const json = JSON.stringify(userList);
         localStorageService.setItem(localStorageKeys.userList, json);
+        
         return { status: 'OK', message: 'User created successfully!' };
     }
 }

@@ -1,43 +1,69 @@
 import React, { useState } from 'react';
 import {
-    useHistory,
-    useLocation
+    useHistory
   } from "react-router-dom";
 import LoginForm from '../components/login/LoginForm';
 import AuthService from '../services/AuthService';
 import './LoginPage.scss';
+import ReactCardFlip from 'react-card-flip';
+import RegisterForm from '../components/login/RegisterForm';
 
 export default function LoginPage() {
   let history = useHistory();
-  let location = useLocation();
-  let email = useState('');
-  let pwd = useState('');
+  let [isFlipped, updateIsFlipped] = useState(false);
 
-  let { from } = location.state || { from: { pathname: "/" } };
-  let login = () => {
-    const user = AuthService.signIn((email, pwd));
+  function login(email, pwd){
+    const user = AuthService.signIn(email, pwd);
 
     if(user){
-      history.replace(from);
+      // history.replace(from);
+      history.push('/home');
     } else {
       // TODO: replace alert with a UI rendered error
       alert("User log in failed");
     }
   };
 
-  function onPressSignUp(){
-    // TODO: animate to register form
+  function registerUser(userData){
+    const { status, message } = AuthService.createUser(userData);
+    if(status === 'OK'){
+      history.push('/home');
+    } else {
+      // TODO: Show message as a toast
+      alert(message);
+    }
+  }
+
+  function flipForm(){
+    updateIsFlipped(!isFlipped);
   }
 
   return (
     <div className="ModalWrapper">
-      <div className="Modal">
-        <div className="Title">Sign-In</div>
-        <LoginForm onSubmit={login} />
-      </div>
-      <div className="SignUpWrapper">
-        <div className="SignUp">Not registered? <a href="" onClick={onPressSignUp}>Sign-up</a></div>   
-      </div>
+      <ReactCardFlip 
+        isFlipped={isFlipped} 
+        flipDirection="horizontal">
+        <div>
+          <div className="Title">Sign-In</div>
+          <LoginForm onSubmit={login} />
+          <div className="SignInFooter">
+            <div className="SubText">
+              Not registered? 
+              <button className="ButtonLink" onClick={flipForm}>Sign-In</button>
+            </div>   
+          </div>
+        </div>
+        <div>
+          <div className="Title">Sign-Up</div>
+          <RegisterForm onSubmit={registerUser}/>
+          <div className="SignUpFooter">
+            <div className="SubText">
+              Already registered? 
+              <button className="ButtonLink" onClick={flipForm}>Sign-Up</button>
+            </div>   
+          </div>
+        </div>
+      </ReactCardFlip>
     </div>
 
   );
