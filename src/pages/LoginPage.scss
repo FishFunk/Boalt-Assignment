@@ -3,19 +3,45 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: transparent linear-gradient(180deg, #5AC8FA 0%, #FFFFFF00 80%);
 }
 
-// Targeted Class from Card Flip Library
-.test {
+.modal {
     margin-top: 10%;
-    max-width: 400px;
-    height: 320px;
+    width: 400px;
+    height: 400px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #CCCCCC;
     border: 1px solid #F2F2F2;
-    opacity: 1;
-    padding: 50px;
+    padding: 10px 40px 50px 40px;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 500px) {
+    .modal {
+      width: 250px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .modal {
+      width: 200px;
+    }
+}
+
+.message {
+    max-width: 300px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+}
+
+.errorMessage {
+    color: #FF3B30;
+}
+
+.successMessage {
+    color: #5AC8FA;
 }
 
 .title {
@@ -29,13 +55,14 @@
 }
 
 .signUpFooter {
-    transform: translate(-50px, 20px);
+    text-align: left;
+    transform: translate(-10%, 20px);
 
 }
 
 .signInFooter {
     text-align: right;
-    transform: translate(50px, 20px);
+    transform: translate(10%, 100px);
 }
 
 .buttonLink{

@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+html {
+  margin: 0;
+  height: 100%;
+}
+
 body {
   margin: 0;
+  height: 100%;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -12,6 +18,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.backgroundGradient {
+  background: transparent linear-gradient(180deg, #5AC8FA 0%, #FFFFFF00 80%);
 }
 
 

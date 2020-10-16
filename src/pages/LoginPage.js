@@ -11,27 +11,33 @@ import RegisterForm from '../components/login/RegisterForm';
 export default function LoginPage() {
   let history = useHistory();
   let [isFlipped, updateIsFlipped] = useState(false);
+  let [showSpinner, setShowSpinner] = useState(false);
+  let [successMessage, setSuccessMessage] = useState('');
+  let [errorMessage, setErrorMessage] = useState('');
 
-  function login(email, pwd){
-    const user = AuthService.signIn(email, pwd);
+  async function login(email, pwd){
+    setShowSpinner(true);
+    const response = await AuthService.signIn(email, pwd);
 
-    if(user){
-      // history.replace(from);
+    if(response.status === 'OK'){
       history.push('/home');
     } else {
-      // TODO: replace alert with a UI rendered error
-      alert("User log in failed");
+      setErrorMessage(response.message);
     }
+
+    setShowSpinner(false);
   };
 
-  function registerUser(userData){
-    const { status, message } = AuthService.createUser(userData);
+  async function registerUser(userData){
+    setShowSpinner(true);
+    const { status, message } = await AuthService.createUser(userData);
     if(status === 'OK'){
-      history.push('/home');
+      setSuccessMessage(message);
+      flipForm();
     } else {
-      // TODO: Show message as a toast
-      alert(message);
+      setErrorMessage(message);
     }
+    setShowSpinner(false);
   }
 
   function flipForm(){
@@ -39,28 +45,40 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="modalWrapper">
-      <div className="test animated animatedFadeInUp fadeInUp">
+    <div className="modalWrapper backgroundGradient" onClick={()=>{setErrorMessage(''); setSuccessMessage('')}}>
+      <div className="modal animated animatedFadeInUp fadeInUp">
+        <div className="message">
+          {  
+            errorMessage ? <text className="errorMessage">{errorMessage}</text> : null
+          }
+          {  
+            successMessage ? <text className="successMessage">{successMessage}</text> : null
+          }
+        </div>
         <ReactCardFlip 
           isFlipped={isFlipped} 
           flipDirection="horizontal">
           <div>
             <div className="title">Sign-In</div>
-            <LoginForm onSubmit={login} />
+            <LoginForm onSubmit={login} loading={showSpinner} />
             <div className="signInFooter">
               <div className="subText">
                 Not registered? 
-                <button className="buttonLink" onClick={flipForm}>Sign-In</button>
+                <button className="buttonLink" onClick={flipForm}>
+                    Sign-Up
+                </button>
               </div>   
             </div>
           </div>
           <div>
             <div className="title">Sign-Up</div>
-            <RegisterForm onSubmit={registerUser}/>
+            <RegisterForm onSubmit={registerUser} loading={showSpinner}/>
             <div className="signUpFooter">
               <div className="subText">
                 Already registered? 
-                <button className="buttonLink" onClick={flipForm}>Sign-Up</button>
+                <button className="buttonLink" onClick={flipForm}>
+                    Sign-In
+                </button>
               </div>   
             </div>
           </div>
