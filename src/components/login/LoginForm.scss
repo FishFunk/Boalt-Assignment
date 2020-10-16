@@ -1,4 +1,4 @@
-.Form {
+.form {
     height: 300px;
     width: 300px;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: space-evenly;
 }
 
-.FormInput {
+.formInput {
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     }
 }
 
-.SubmitBtn {
+.submitBtn {
     align-self: center;
     padding: 14px;
     width: 160px;

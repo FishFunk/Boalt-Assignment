@@ -1,4 +1,4 @@
-.ModalWrapper {
+.modalWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,8 @@
     background: transparent linear-gradient(180deg, #5AC8FA 0%, #FFFFFF00 80%);
 }
 
-.react-card-flip {
+// Targeted Class from Card Flip Library
+.test {
     margin-top: 10%;
     max-width: 400px;
     height: 320px;
@@ -17,27 +18,27 @@
     padding: 50px;
 }
 
-.Title {
+.title {
     text-align: center;
     font-weight: bold;
     font-size: 36px;
 }
 
-.SubText {
+.subText {
     font-size: 14px;
 }
 
-.SignUpFooter {
+.signUpFooter {
     transform: translate(-50px, 20px);
 
 }
 
-.SignInFooter {
+.signInFooter {
     text-align: right;
     transform: translate(50px, 20px);
 }
 
-.ButtonLink{
+.buttonLink{
     border: none;
     background: none;
     text-decoration: underline;

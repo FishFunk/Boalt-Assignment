@@ -39,31 +39,33 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="ModalWrapper">
-      <ReactCardFlip 
-        isFlipped={isFlipped} 
-        flipDirection="horizontal">
-        <div>
-          <div className="Title">Sign-In</div>
-          <LoginForm onSubmit={login} />
-          <div className="SignInFooter">
-            <div className="SubText">
-              Not registered? 
-              <button className="ButtonLink" onClick={flipForm}>Sign-In</button>
-            </div>   
+    <div className="modalWrapper">
+      <div className="test animated animatedFadeInUp fadeInUp">
+        <ReactCardFlip 
+          isFlipped={isFlipped} 
+          flipDirection="horizontal">
+          <div>
+            <div className="title">Sign-In</div>
+            <LoginForm onSubmit={login} />
+            <div className="signInFooter">
+              <div className="subText">
+                Not registered? 
+                <button className="buttonLink" onClick={flipForm}>Sign-In</button>
+              </div>   
+            </div>
           </div>
-        </div>
-        <div>
-          <div className="Title">Sign-Up</div>
-          <RegisterForm onSubmit={registerUser}/>
-          <div className="SignUpFooter">
-            <div className="SubText">
-              Already registered? 
-              <button className="ButtonLink" onClick={flipForm}>Sign-Up</button>
-            </div>   
+          <div>
+            <div className="title">Sign-Up</div>
+            <RegisterForm onSubmit={registerUser}/>
+            <div className="signUpFooter">
+              <div className="subText">
+                Already registered? 
+                <button className="buttonLink" onClick={flipForm}>Sign-Up</button>
+              </div>   
+            </div>
           </div>
-        </div>
-      </ReactCardFlip>
+        </ReactCardFlip>
+      </div>
     </div>
 
   );

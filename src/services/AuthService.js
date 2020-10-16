@@ -16,8 +16,6 @@ class AuthService {
         const userListJson = localStorageService.getItem(localStorageKeys.userList) || '[]';
         let userList = JSON.parse(userListJson);
 
-        console.log(email, pwd);
-
         // Check if user exists
         for(let user of userList){
             if(user.email === email && user.pwd === pwd){
@@ -49,7 +47,7 @@ class AuthService {
         }
 
         // Set current user
-        const jsonUser = JSON.stringify(user);
+        const jsonUser = JSON.stringify(userData);
         localStorageService.setItem(localStorageKeys.userKey, jsonUser);
 
         // Update user list
