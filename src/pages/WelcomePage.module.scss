@@ -1,4 +1,4 @@
-.conatiner {
+.container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -28,6 +28,24 @@
     justify-content: center;
     background-color: #000000;
     height: 100px;
+    min-width: 360px;
+}
+
+.absoluteCenterTextContainer {
+    top: 40%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    font-weight: bold;
+    word-wrap: normal;
+}
+
+.centerText {
+    text-align: center;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
 .headerAppleLogo {
@@ -36,10 +54,18 @@
 
 .mainAppleLogo {
     color: #FFFFFF;
+    opacity: 0.5;
+    font-size: 200px;
 }
 
 .enterBtn {
     align-self: center;
+}
+
+.counter {
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 50px;
 }
 
 
@@ -53,9 +79,9 @@
     }
     to {
       margin-top: 5px;
-      margin-right: 100px;
-      margin-bottom: 100px;
-      margin-left: 100px;
+      margin-right: 10%;
+      margin-bottom: 10%;
+      margin-left: 10%;
     }
 }
 

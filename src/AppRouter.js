@@ -9,6 +9,7 @@ import AuthService from './services/AuthService';
 import LoginPage from './pages/LoginPage';
 import PageNotFound from './pages/PageNotFound';
 import WelcomePage from './pages/WelcomePage';
+import HomePage from './pages/HomePage';
 
 export default function AppRouter() {
   return (
@@ -17,6 +18,9 @@ export default function AppRouter() {
         <Route path="/login" component={LoginPage} />
         <ProtectedRoute path="/welcome">
           <WelcomePage />
+        </ProtectedRoute>
+        <ProtectedRoute path="/home">
+          <HomePage />
         </ProtectedRoute>
         <Route path="*" component={PageNotFound} />
       </Switch>
