@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    width: 100%;
 }
 
 .row {
@@ -14,16 +15,64 @@
 
 .homeHeader{
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+}
+
+.headerLogoWrapper{
+    display: flex;
     align-items: center;
     justify-content: center;
+    align-self: flex-start;
     background-color: #000000;
-    height: 100px;
+    height: 100%;
 }
 
 .headerLogo{
     color: #FFFFFF;
 }
 
+.navWrapper {
+    width: 90%;
+    height: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navItem {
+    list-style-type: none;
+    color: #707070;
+    padding: 20px;
+    font-size: 20px;
+    align-self: center;
+}
+
+.navItem:hover {
+    border-bottom: 1px solid #5AC8FA;
+}
+
+.notifyBtn {
+    padding: 10px;
+    width: 150px;
+    border: none;
+    border-radius: 50px;
+    background-color: #5AC8FA;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content {
+    padding: none;
+    margin-left: 100px;
+    height: 100%;
+    width: 100%;
+    background: transparent linear-gradient(90deg, #F2F2F2 0%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
+}
 
 // Animations
 @keyframes shrinkLeft {
@@ -35,7 +84,23 @@
     }
 }
 
+@keyframes popInLeft {
+    from {
+        width: 0;
+        transform: translateX(1000px);
+    }
+    to {
+        width: 90%;
+        transform: translateX(0);
+    }
+}
+
 .shrinkLeft {
     animation-name: shrinkLeft;
     -webkit-animation-name: shrinkLeft;
+}
+
+.popInLeft {
+    animation-name: popInLeft;
+    -webkit-animation-name: popInLeft;
 }
