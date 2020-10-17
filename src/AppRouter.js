@@ -8,15 +8,15 @@ import {
 import AuthService from './services/AuthService';
 import LoginPage from './pages/LoginPage';
 import PageNotFound from './pages/PageNotFound';
-import HomePage from './pages/HomePage';
+import WelcomePage from './pages/WelcomePage';
 
 export default function AppRouter() {
   return (
     <Router>
       <Switch>
         <Route path="/login" component={LoginPage} />
-        <ProtectedRoute path="/home">
-          <HomePage />
+        <ProtectedRoute path="/welcome">
+          <WelcomePage />
         </ProtectedRoute>
         <Route path="*" component={PageNotFound} />
       </Switch>

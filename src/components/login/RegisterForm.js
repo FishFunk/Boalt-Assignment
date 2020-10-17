@@ -77,7 +77,7 @@ export default function RegisterForm(props) {
                 { pwdError ? <label className='errorLabel'>Required</label> : <label className='emptyLabel'></label>}
             </div>
 
-            <button className="submitBtn" onClick={onFormSubmit}>
+            <button className="submitBtn" onClick={onFormSubmit} disabled={props.loading}>
             {
                 props.loading ? 
                     <Loader type="ThreeDots" color="#5AC8FA" height={10} width={20} /> :

@@ -25,7 +25,7 @@ code {
 }
 
 
-/* Common Animation */
+/* Reusable Animations */
 @keyframes fadeInUp {
   from {
       transform: translate3d(0,40px,0);
@@ -38,16 +38,9 @@ code {
   }
 }
 
-@-webkit-keyframes fadeInUp {
-  from {
-      transform: translate3d(0,40px,0);
-      opacity: 0;
-  }
-
-  to {
-      transform: translate3d(0,0,0);
-      opacity: 1
-  }
+@keyframes fadeOut {
+  from {opacity: 1}
+  to {opacity: 0}
 }
 
 .animated {
@@ -57,8 +50,9 @@ code {
   -webkit-animation-fill-mode: both
 }
 
-.animatedFadeInUp {
-  opacity: 0
+.fadeOut {
+  animation-name: fadeOut;
+  -webkit-animation-name: fadeOut;
 }
 
 .fadeInUp {

@@ -55,12 +55,14 @@
     opacity: 0.8;
 }
 
-.submitBtn:active {
-    background: #707070;
-    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-            box-shadow: inset 0px 0px 5px #c1c1c1;
-     outline: none;
+.submitBtn:disabled:hover{
+    opacity: 1;
+}
+
+.submitBtn:disabled {
+    background: #c1c1c1;
+    outline: none;
+    border: none;
 }
   
 @keyframes shake {

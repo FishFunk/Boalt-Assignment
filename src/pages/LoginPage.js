@@ -14,18 +14,23 @@ export default function LoginPage() {
   let [showSpinner, setShowSpinner] = useState(false);
   let [successMessage, setSuccessMessage] = useState('');
   let [errorMessage, setErrorMessage] = useState('');
+  let [modalClasses, setModalClasses] = useState('modal animated fadeInUp');
 
   async function login(email, pwd){
     setShowSpinner(true);
     const response = await AuthService.signIn(email, pwd);
-
     if(response.status === 'OK'){
-      history.push('/home');
+      // Login succeeded
+      setModalClasses('modal animated fadeOut');
+      // Delay page change for fade out animation
+      setTimeout(()=>{
+        history.push('/welcome');
+        setShowSpinner(false);
+      }, 1000);
     } else {
       setErrorMessage(response.message);
+      setShowSpinner(false);
     }
-
-    setShowSpinner(false);
   };
 
   async function registerUser(userData){
@@ -46,7 +51,7 @@ export default function LoginPage() {
 
   return (
     <div className="modalWrapper backgroundGradient" onClick={()=>{setErrorMessage(''); setSuccessMessage('')}}>
-      <div className="modal animated animatedFadeInUp fadeInUp">
+      <div className={modalClasses}>
         <div className="message">
           {  
             errorMessage ? <text className="errorMessage">{errorMessage}</text> : null
@@ -64,7 +69,7 @@ export default function LoginPage() {
             <div className="signInFooter">
               <div className="subText">
                 Not registered? 
-                <button className="buttonLink" onClick={flipForm}>
+                <button className="buttonLink" onClick={flipForm} disabled={showSpinner}>
                     Sign-Up
                 </button>
               </div>   
@@ -76,7 +81,7 @@ export default function LoginPage() {
             <div className="signUpFooter">
               <div className="subText">
                 Already registered? 
-                <button className="buttonLink" onClick={flipForm}>
+                <button className="buttonLink" onClick={flipForm} disabled={showSpinner}>
                     Sign-In
                 </button>
               </div>   
