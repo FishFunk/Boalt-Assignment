@@ -1,3 +1,5 @@
+@import '../theme';
+
 .container {
     display: flex;
     flex-direction: column;
@@ -19,14 +21,14 @@
 }
 
 .primaryBackground {
-    background-color: #5AC8FA;
+    background-color: $primary;
 }
 
 .welcomeHeader {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000000;
+    background-color: $dark;
     height: 100px;
     min-width: 360px;
 }
@@ -49,11 +51,11 @@
 }
 
 .headerAppleLogo {
-    color: #FFFFFF;
+    color: $white;
 }
 
 .mainAppleLogo {
-    color: #FFFFFF;
+    color: $white;
     opacity: 0.5;
     font-size: 200px;
 }

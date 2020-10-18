@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import './theme';
 
 html {
   margin: 0;
@@ -27,8 +28,12 @@ code {
   height: 100vh;
 }
 
-.backgroundGradient {
-  background: transparent linear-gradient(180deg, #5AC8FA 0%, #FFFFFF00 80%);
+.primaryGradient {
+  background: transparent linear-gradient(180deg, $primary 0%, #FFFFFF00 80%);
+}
+
+.grayGradient {
+  background: transparent linear-gradient(90deg, $lightest-gray 0%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
 }
 
 

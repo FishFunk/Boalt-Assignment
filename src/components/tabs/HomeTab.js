@@ -7,7 +7,7 @@ import { faApple } from '@fortawesome/free-brands-svg-icons';
 export default function HomeTab(props) {
 
     return (
-        <div className={styles.content}>
+        <div className={`grayGradient ${styles.content}`}>
             <FontAwesomeIcon icon={faApple} className={styles.backgroundLogo}/>
             <div className={`${styles.tabContent} animated fadeInUp`}>
                 <div className={styles.row}>

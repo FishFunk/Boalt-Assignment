@@ -50,7 +50,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="modalWrapper backgroundGradient" onClick={()=>{setErrorMessage(''); setSuccessMessage('')}}>
+    <div className="modalWrapper primaryGradient" onClick={()=>{setErrorMessage(''); setSuccessMessage('')}}>
       <div className={modalClasses}>
         <div className="message">
           {  

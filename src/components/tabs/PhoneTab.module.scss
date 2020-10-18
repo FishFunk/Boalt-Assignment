@@ -1,0 +1,126 @@
+@import '../../theme';
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.padding40 {
+    padding: 40px;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    min-height: 500px;
+}
+
+.label{
+    color: $red;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 56px;
+    font-weight: bold;
+    max-width: 400px;
+}
+
+.info {
+    font-size: 14px;
+    max-width: 350px;
+    color: $gray;
+}
+
+.shipDate {
+    color: $red;
+}
+
+.phoneImgContainer{
+    text-align: center;
+    width: 500px;
+}
+
+.phoneImg {
+    width: 350px;
+}
+
+.iconList{
+    padding-top: 40vh;
+    text-align: center;
+    list-style-type: none;
+    color: $lighter-gray;
+    font-size: 20px;
+
+    li {
+        padding: 10px;
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+        &.active{
+            font-size: 25px;
+            color: $gray;
+        }
+    }
+}
+
+.price {
+    color: $lighter-gray
+}
+
+.buyNow{
+    color: $red;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.frontBackImg{
+    margin: 10px;
+    padding-bottom: 20px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.leftActiveImgIndicator{
+    width: 100%;
+    height: 10px;
+    margin: 0 0 20px 40px;
+    background-color: $lightest-gray;
+
+    &.active{
+        background-color: $red;
+    }
+}
+
+.rightActiveImgIndicator{
+    width: 100%;
+    height: 10px;
+    margin: 0 40px 20px 0;
+    background-color: $lightest-gray;
+
+    &.active{
+        background-color: $red;
+    }
+}

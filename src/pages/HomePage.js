@@ -21,7 +21,7 @@ export default function HomePage() {
 
         switch(activeTab){
             case('phone'):
-                component = <PhoneTab />;
+                component = <PhoneTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
                 break;
             case('macbook'):
                 break;        

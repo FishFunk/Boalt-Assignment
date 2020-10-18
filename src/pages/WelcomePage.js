@@ -19,7 +19,7 @@ export default function WelcomePage() {
         <header className={`animated ${styles.welcomeHeader} ${styles.pullDown}`}>
             <FontAwesomeIcon icon={faApple} className={styles.headerAppleLogo} size='2x' />
         </header>   
-        <div className={`backgroundGradient animated ${styles.content} ${styles.squeeze}`}>
+        <div className={`primaryGradient animated ${styles.content} ${styles.squeeze}`}>
             <div className='animated fadeInUp'>
                 <div className={styles.row}>
                     <FontAwesomeIcon icon={faApple} className={styles.mainAppleLogo}/>
