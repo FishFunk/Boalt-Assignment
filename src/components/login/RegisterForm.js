@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Form.scss';
+import styles from './Form.module.scss';
 import Loader from 'react-loader-spinner';
 import { validateEmail } from '../../Utils';
 
@@ -42,19 +42,21 @@ export default function RegisterForm(props) {
     }
 
     return (
-        <div className="form">
-            <div className="formInput">
+        <div className={styles.form}>
+            <div className={styles.formInput}>
                 <label>Full Name</label>
                 <input 
                     type='text'
-                    className={nameError ? 'error': ''} 
+                    className={nameError ? styles.error: ''}
                     placeholder='John Doe' 
                     onChange={(e)=>setName(e.target.value)}
                     onFocus={()=>setNameError(false)}>
                 </input>
-                { nameError ? <label className='errorLabel'>Required</label> : <label className='emptyLabel'></label>}
+                { nameError ? 
+                    <label className={styles.errorLabel}>Required</label> : 
+                    <label className={styles.emptyLabel}></label>}
             </div>
-            <div className="formInput">
+            <div className={styles.formInput}>
                 <label>Email</label>
                 <input 
                     type='email'
@@ -63,21 +65,23 @@ export default function RegisterForm(props) {
                     onChange={(e)=>setEmail(e.target.value)}
                     onFocus={()=>setEmailError('')}>
                 </input>
-                { emailError ? <label className='errorLabel'>{emailError}</label> : <label className='emptyLabel'></label>}
+                { emailError ? 
+                    <label className={styles.errorLabel}>{emailError}</label> : 
+                    <label className={styles.emptyLabel}></label>}
             </div>
-            <div className="formInput">
+            <div className={styles.formInput}>
                 <label>Password</label>
                 <input 
                     type='password'
-                    className={pwdError ? 'error': ''} 
+                    className={pwdError ? styles.error: ''} 
                     placeholder='****************' 
                     onChange={(e)=>setPwd(e.target.value)}
                     onFocus={()=>setPwdError(false)}>
                 </input>
-                { pwdError ? <label className='errorLabel'>Required</label> : <label className='emptyLabel'></label>}
+                { pwdError ? <label className={styles.errorLabel}>Required</label> : <label className={styles.emptyLabel}></label>}
             </div>
 
-            <button className="submitBtn" onClick={onFormSubmit} disabled={props.loading}>
+            <button className={styles.submitBtn} onClick={onFormSubmit} disabled={props.loading}>
             {
                 props.loading ? 
                     <Loader type="ThreeDots" color="#5AC8FA" height={10} width={20} /> :

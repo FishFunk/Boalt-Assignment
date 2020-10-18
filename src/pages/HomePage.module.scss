@@ -1,11 +1,3 @@
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
 .row {
     display: flex;
     flex-direction: row;
@@ -16,6 +8,7 @@
 .homeHeader{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: 100px;
 }
@@ -24,54 +17,90 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: flex-start;
     background-color: #000000;
     height: 100%;
+    
 }
 
 .headerLogo{
     color: #FFFFFF;
 }
 
-.navWrapper {
-    width: 90%;
-    height: 100%;
-}
-
 .nav {
     display: flex;
-    justify-content: flex-end;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .navItem {
     list-style-type: none;
     color: #707070;
-    padding: 20px;
-    font-size: 20px;
+    margin: 10px;
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
     align-self: center;
 }
 
 .navItem:hover {
-    border-bottom: 1px solid #5AC8FA;
+    font-weight: bold;
 }
 
 .notifyBtn {
     padding: 10px;
-    width: 150px;
+    width: 120px;
     border: none;
-    border-radius: 50px;
+    border-radius: 60px;
     background-color: #5AC8FA;
     color: #FFFFFF;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
+}
+.notifyBtn:hover {
+    padding: 12px;
+    text-decoration: underline;
 }
 
 .content {
-    padding: none;
-    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     height: 100%;
     width: 100%;
     background: transparent linear-gradient(90deg, #F2F2F2 0%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
+}
+
+.subContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftPanel {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    background-color: #FFFFFF;
+}
+
+.backgroundLogo {
+    z-index: -1;
+    position: absolute;
+    color: #CCCCCC;
+    font-size: 200px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.iconList {
+    list-style-type: none;
+    display: flex;
 }
 
 // Animations
@@ -84,14 +113,14 @@
     }
 }
 
-@keyframes popInLeft {
+@keyframes flyInRight {
     from {
         width: 0;
         transform: translateX(1000px);
     }
     to {
-        width: 90%;
         transform: translateX(0);
+        width: auto;
     }
 }
 
@@ -100,7 +129,7 @@
     -webkit-animation-name: shrinkLeft;
 }
 
-.popInLeft {
-    animation-name: popInLeft;
-    -webkit-animation-name: popInLeft;
+.flyInRight {
+    animation-name: flyInRight;
+    -webkit-animation-name: flyInRight;
 }

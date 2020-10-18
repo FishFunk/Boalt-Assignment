@@ -53,7 +53,7 @@ class AuthService {
                 for(let user of userList){
                     if( user.email === userData.email){
                         // User already exists
-                        reject({ status: 'ERROR', message: 'User account already exists with that email.'});
+                        resolve({ status: 'ERROR', message: 'User account already exists with that email.'});
                         return;
                     }
                 }
