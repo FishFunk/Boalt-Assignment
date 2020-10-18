@@ -3,6 +3,7 @@ import styles from './HomePage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple } from '@fortawesome/free-brands-svg-icons';
 import { faMobileAlt, faLaptop, faClock } from '@fortawesome/free-solid-svg-icons';
+import Media from 'react-media';
 import {
     useHistory
   } from "react-router-dom";
@@ -19,20 +20,42 @@ export default function HomePage() {
                 <FontAwesomeIcon icon={faApple} className={styles.headerLogo} size='2x' />
             </div>
             <div className={`animated ${styles.flyInRight}`}>
-                <ul className={styles.nav}>
-                    <li className={styles.navItem}>
-                        <a>iPhone</a>
-                    </li>
-                    <li className={styles.navItem}>
-                        <a>MacBook Pro</a>
-                    </li>
-                    <li className={styles.navItem}>
-                        <a>Watch</a>
-                    </li>
-                    <li className={styles.navItem}>
-                        <button className={styles.notifyBtn}>Notify Me</button>
-                    </li>
-                </ul>
+                {/* Shrink to icon based nav when screen size is small */}
+                <Media queries={{ small: "(max-width: 699px)" }}>
+                    {matches =>
+                        matches.small ? (
+                            <ul className={styles.nav}>
+                                <li className={styles.navItem}>
+                                    <FontAwesomeIcon icon={faMobileAlt} />
+                                </li>
+                                <li className={styles.navItem}>
+                                    <FontAwesomeIcon icon={faLaptop} />
+                                </li>
+                                <li className={styles.navItem}>
+                                    <FontAwesomeIcon icon={faClock} />
+                                </li>
+                                <li className={styles.navItem}>
+                                    <button className={styles.notifyBtn}>Notify Me</button>
+                                </li>
+                            </ul>
+                        ) : (
+                            <ul className={styles.nav}>
+                                <li className={styles.navItem}>
+                                    <a>iPhone</a>
+                                </li>
+                                <li className={styles.navItem}>
+                                    <a>MacBook Pro</a>
+                                </li>
+                                <li className={styles.navItem}>
+                                    <a>Watch</a>
+                                </li>
+                                <li className={styles.navItem}>
+                                    <button className={styles.notifyBtn}>Notify Me</button>
+                                </li>
+                            </ul>
+                        )
+                    }
+                </Media>
             </div>
         </header>   
         <div className={`${styles.content}`}>
@@ -42,7 +65,7 @@ export default function HomePage() {
                     <h1 className={styles.title}>Welcome to Apple</h1>
                 </div>
                 <div className={styles.row}> 
-                    <a>See Our Products</a>
+                    <a className={styles.productLink} onClick={()=>{}}>See Our Products</a>
                 </div>
                 <div className={styles.row}>
                     <ul className={styles.iconList}>

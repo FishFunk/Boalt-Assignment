@@ -1,6 +1,12 @@
+$primary-color: #5AC8FA;
+$gray-color: #707070;
+$dark-color: #000000;
+$light-color: #FFFFFF;
+
 .row {
     display: flex;
     flex-direction: row;
+    text-align: center;
     justify-content: center;
     width: 100%;
 }
@@ -17,25 +23,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000000;
+    background-color: $dark-color;
+    min-width: 50px;
     height: 100%;
-    
 }
 
 .headerLogo{
-    color: #FFFFFF;
+    color: $light-color;
 }
 
 .nav {
     display: flex;
     height: 100%;
+    margin: 0 25px 0 0;
     padding: 0;
-    margin: 0;
+    width: auto;
 }
 
 .navItem {
     list-style-type: none;
-    color: #707070;
+    color: $gray-color;
     margin: 10px;
     width: 120px;
     text-align: center;
@@ -45,6 +52,7 @@
 
 .navItem:hover {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .notifyBtn {
@@ -52,14 +60,15 @@
     width: 120px;
     border: none;
     border-radius: 60px;
-    background-color: #5AC8FA;
-    color: #FFFFFF;
+    background-color: $primary-color;
+    color: $light-color;
     font-size: 18px;
     font-weight: bold;
-}
-.notifyBtn:hover {
-    padding: 12px;
-    text-decoration: underline;
+    &:hover {
+        padding: 12px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
 
 .content {
@@ -83,7 +92,7 @@
     left: 0;
     bottom: 0;
     width: 100px;
-    background-color: #FFFFFF;
+    background-color: $light-color;
 }
 
 .backgroundLogo {
@@ -98,9 +107,68 @@
     font-size: 50px;
 }
 
+.productLink {
+    color: $primary-color;
+    &:hover{
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
 .iconList {
+    transform: translateY(50px);
     list-style-type: none;
     display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    width: 200px;
+    font-size: 26px;
+    color: $gray-color;
+
+    li:hover {
+        color: #CCCCCC;
+        cursor: pointer;
+    }
+}
+
+/* Media query for screens that are 699px or less */
+@media screen and (max-width: 699px) {
+    .homeHeader{
+        height: 60px;
+    }
+
+    .nav {
+        margin: 0 55px 0 0;
+    }
+
+    .navItem {
+        width: 50px;
+        font-size: 18px;
+    }
+
+    .navItem:hover {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .notifyBtn {
+        width: 100px;
+        font-size: 14px;
+    }
+
+    .leftPanel {
+        display: none;
+    }
+}
+
+/* Media query for screens that are 399px or less */
+@media screen and (max-width: 399px) {
+    .headerLogoWrapper{
+        display: none;
+    }
+    .nav {
+        margin: 0;
+    }
 }
 
 // Animations
