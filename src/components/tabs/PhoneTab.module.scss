@@ -27,8 +27,6 @@
 .col {
     display: flex;
     flex-direction: column;
-    min-width: 100px;
-    min-height: 500px;
 }
 
 .label{
@@ -54,7 +52,8 @@
 
 .phoneImgContainer{
     text-align: center;
-    width: 500px;
+    max-width: 500px;
+    width: auto;
 }
 
 .phoneImg {
@@ -62,6 +61,7 @@
 }
 
 .iconList{
+    width: 100px;
     padding-top: 40vh;
     text-align: center;
     list-style-type: none;
@@ -88,6 +88,8 @@
 }
 
 .buyNow{
+    font-size: 14px;
+    font-weight: bold;
     color: $red;
     &:hover{
         cursor: pointer;
@@ -122,5 +124,17 @@
 
     &.active{
         background-color: $red;
+    }
+}
+
+/* Media query for screens that are 499 or less */
+@media screen and (max-width: 499px) {
+    .iconList{
+        align-self: center;
+        width: 100%;
+        padding-top: 0;
+        li {
+            display: inline-block
+        }
     }
 }

@@ -47,11 +47,12 @@ export default function PhoneTab(props) {
                     <div className={styles.padding40}>
                         <h1 className={styles.price}>From $699</h1>
                         <a className={styles.buyNow}>
-                            Buy now &nbsp;
+                            Buy now 
+                            &nbsp;
                             <FontAwesomeIcon icon={faChevronRight} />
                         </a>
                     </div>
-                    <div>
+                    <div className={styles.padding40}>
                         <div className={styles.row}>
                             <img 
                                 onClick={setActiveImg.bind(this, true)}
@@ -72,7 +73,7 @@ export default function PhoneTab(props) {
                 </div>
             </div>
             <div className={`${styles.col} animated fadeInUp`}>
-                <div className={styles.phoneImgContainer}>
+                <div className={`${styles.row} ${styles.phoneImgContainer}`}>
                     {
                         leftImgActive ?
                             <img 
@@ -87,7 +88,7 @@ export default function PhoneTab(props) {
                 </div>
             </div>
             <div className={`${styles.col} animated fadeInUp`}>
-                <ul className={styles.iconList}>
+                <ul className={`${styles.iconList}`}>
                     <li
                         className={`${isTabActive('phone') ? styles.active : ''}`} 
                         onClick={props.onSetActiveTab.bind(this, 'phone')}>
