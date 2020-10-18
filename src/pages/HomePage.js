@@ -1,22 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './HomePage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple } from '@fortawesome/free-brands-svg-icons';
 import { faMobileAlt, faLaptop, faClock } from '@fortawesome/free-solid-svg-icons';
 import Media from 'react-media';
-import {
-    useHistory
-  } from "react-router-dom";
+import HomeTab from '../components/tabs/HomeTab';
+import PhoneTab from '../components/tabs/PhoneTab';
 
 export default function HomePage() {
-    // let history = useHistory();
 
-    // TODO: Make nav responsive - check out react-media package
+    // tab options - home, phone, macbook, watch
+    let [activeTab, setActiveTab] = useState('home');
+
+    function onSetActiveTab(tabName){
+        setActiveTab(tabName);
+    }
+
+    function getActiveTab(){
+        let component;
+
+        switch(activeTab){
+            case('phone'):
+                component = <PhoneTab />;
+                break;
+            case('macbook'):
+                break;        
+            case('watch'):
+                break;
+            default:
+                component = <HomeTab onSetActiveTab={onSetActiveTab} />
+        }
+
+        return component;
+    }
+
+    function isTabActive(tabName){
+        return activeTab === tabName;
+    }
 
     return (
     <div className='container'>
         <header className={styles.homeHeader}>
-            <div className={`animated ${styles.headerLogoWrapper} ${styles.shrinkLeft}`}>
+            <div 
+                className={`animated ${styles.headerLogoWrapper} ${styles.shrinkLeft}`} 
+                onClick={onSetActiveTab.bind(this, 'home')}>
                 <FontAwesomeIcon icon={faApple} className={styles.headerLogo} size='2x' />
             </div>
             <div className={`animated ${styles.flyInRight}`}>
@@ -25,13 +52,16 @@ export default function HomePage() {
                     {matches =>
                         matches.small ? (
                             <ul className={styles.nav}>
-                                <li className={styles.navItem}>
+                                <li className={`${styles.navItem} ${isTabActive('phone') ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, 'phone')}>
                                     <FontAwesomeIcon icon={faMobileAlt} />
                                 </li>
-                                <li className={styles.navItem}>
+                                <li className={`${styles.navItem} ${isTabActive('macbook') ? styles.active : ''}`}
+                                    onClick={onSetActiveTab.bind(this, 'macbook')}>
                                     <FontAwesomeIcon icon={faLaptop} />
                                 </li>
-                                <li className={styles.navItem}>
+                                <li className={`${styles.navItem} ${isTabActive('watch') ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, 'watch')}>
                                     <FontAwesomeIcon icon={faClock} />
                                 </li>
                                 <li className={styles.navItem}>
@@ -40,13 +70,16 @@ export default function HomePage() {
                             </ul>
                         ) : (
                             <ul className={styles.nav}>
-                                <li className={styles.navItem}>
+                                <li className={`${styles.navItem} ${isTabActive('phone') ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, 'phone')}>
                                     <a>iPhone</a>
                                 </li>
-                                <li className={styles.navItem}>
+                                <li className={`${styles.navItem} ${isTabActive('macbook') ? styles.active : ''}`}
+                                    onClick={onSetActiveTab.bind(this, 'macbook')}>
                                     <a>MacBook Pro</a>
                                 </li>
-                                <li className={styles.navItem}>
+                                <li className={`${styles.navItem} ${isTabActive('watch') ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, 'watch')}>
                                     <a>Watch</a>
                                 </li>
                                 <li className={styles.navItem}>
@@ -58,29 +91,8 @@ export default function HomePage() {
                 </Media>
             </div>
         </header>   
-        <div className={`${styles.content}`}>
-            <FontAwesomeIcon icon={faApple} className={styles.backgroundLogo}/>
-            <div className={`${styles.subContent} animated fadeInUp`}>
-                <div className={styles.row}>
-                    <h1 className={styles.title}>Welcome to Apple</h1>
-                </div>
-                <div className={styles.row}> 
-                    <a className={styles.productLink} onClick={()=>{}}>See Our Products</a>
-                </div>
-                <div className={styles.row}>
-                    <ul className={styles.iconList}>
-                        <li>
-                            <FontAwesomeIcon icon={faMobileAlt} />
-                        </li>
-                        <li>
-                            <FontAwesomeIcon icon={faLaptop} />
-                        </li>
-                        <li>
-                            <FontAwesomeIcon icon={faClock} />
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div className={styles.tabContainer}>
+            {getActiveTab()}
         </div>
         <div className={styles.leftPanel}></div>
     </div>);

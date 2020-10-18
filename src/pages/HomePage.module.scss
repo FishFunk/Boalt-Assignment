@@ -1,14 +1,11 @@
-$primary-color: #5AC8FA;
-$gray-color: #707070;
-$dark-color: #000000;
-$light-color: #FFFFFF;
+$primary: #5AC8FA;
+$gray: #707070;
+$dark: #000000;
+$white: #FFFFFF;
 
-.row {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
+.tabContainer{
+    height: 100%;
+    margin-left: 100px;
 }
 
 .homeHeader{
@@ -23,13 +20,17 @@ $light-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $dark-color;
+    background-color: $dark;
     min-width: 50px;
     height: 100%;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .headerLogo{
-    color: $light-color;
+    color: $white;
 }
 
 .nav {
@@ -42,17 +43,22 @@ $light-color: #FFFFFF;
 
 .navItem {
     list-style-type: none;
-    color: $gray-color;
+    color: $gray;
     margin: 10px;
     width: 120px;
     text-align: center;
     font-size: 18px;
     align-self: center;
+
+    &:hover{
+        font-weight: bold;
+        cursor: pointer;
+    }
+
 }
 
-.navItem:hover {
+.active{
     font-weight: bold;
-    cursor: pointer;
 }
 
 .notifyBtn {
@@ -60,8 +66,8 @@ $light-color: #FFFFFF;
     width: 120px;
     border: none;
     border-radius: 60px;
-    background-color: $primary-color;
-    color: $light-color;
+    background-color: $primary;
+    color: $white;
     font-size: 18px;
     font-weight: bold;
     &:hover {
@@ -71,65 +77,15 @@ $light-color: #FFFFFF;
     }
 }
 
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    height: 100%;
-    width: 100%;
-    background: transparent linear-gradient(90deg, #F2F2F2 0%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
-}
-
-.subContent {
-    display: flex;
-    flex-direction: column;
-}
-
 .leftPanel {
     position: absolute;
     top: 100px;
     left: 0;
     bottom: 0;
     width: 100px;
-    background-color: $light-color;
+    background-color: $white;
 }
 
-.backgroundLogo {
-    z-index: -1;
-    position: absolute;
-    color: #CCCCCC;
-    font-size: 200px;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 50px;
-}
-
-.productLink {
-    color: $primary-color;
-    &:hover{
-        font-weight: bold;
-        cursor: pointer;
-    }
-}
-
-.iconList {
-    transform: translateY(50px);
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0;
-    width: 200px;
-    font-size: 26px;
-    color: $gray-color;
-
-    li:hover {
-        color: #CCCCCC;
-        cursor: pointer;
-    }
-}
 
 /* Media query for screens that are 699px or less */
 @media screen and (max-width: 699px) {
@@ -159,6 +115,11 @@ $light-color: #FFFFFF;
     .leftPanel {
         display: none;
     }
+
+    .tabContainer{
+        margin-left: 0;
+    }
+    
 }
 
 /* Media query for screens that are 399px or less */
