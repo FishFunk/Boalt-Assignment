@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './PhoneTab.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faLaptop, faClock, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faApple } from '@fortawesome/free-brands-svg-icons';
 import ApiService from '../../services/ApiService';
 
 export default function PhoneTab(props) {
@@ -29,6 +30,7 @@ export default function PhoneTab(props) {
         <div className={styles.container}>
             <div className={`${styles.col} ${styles.grow} animated fadeInUp`}>
                 <div className={`grayGradient ${styles.grow} ${styles.padding40} animated fadeInUp`}>
+                    <FontAwesomeIcon icon={faApple} className={styles.mainAppleLogo}/>
                     <div className={styles.row}>
                         <h2 className={styles.label}>iPhone</h2>
                     </div>

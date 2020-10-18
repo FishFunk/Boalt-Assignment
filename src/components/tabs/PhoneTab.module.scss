@@ -29,6 +29,15 @@
     flex-direction: column;
 }
 
+.mainAppleLogo {
+    margin-left: 300px;
+    color: $lighter-gray;
+    opacity: 0.5;
+    font-size: 200px;
+    position: absolute;
+    z-index: -1;
+}
+
 .label{
     color: $red;
     font-weight: bold;
