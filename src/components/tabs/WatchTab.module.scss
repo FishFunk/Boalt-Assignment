@@ -1,0 +1,78 @@
+@import '../../theme';
+@import './Common.module.scss';
+
+.watchImgContainer{
+    justify-content: center;
+}
+
+.watchImg {
+    width: 300px;
+}
+
+.leftActiveImgIndicator{
+    width: 100%;
+    height: 10px;
+    margin: 0 0 20px 40px;
+    background-color: $lightest-gray;
+
+    &.active{
+        background-color: $red;
+    }
+}
+
+.rightActiveImgIndicator{
+    width: 100%;
+    height: 10px;
+    margin: 0 40px 20px 0;
+    background-color: $lightest-gray;
+
+    &.active{
+        background-color: $red;
+    }
+}
+
+.radio{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    border: 1px solid $lighter-gray;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &.active{
+        border-color: $red;
+    }
+}
+
+.innerRadio {
+    width: 70%;
+    height: 70%;
+    border-radius: 70%;
+}
+
+.whiteCircle {
+    border: 1px solid $dark;
+    background-color: $white-variant;
+}
+
+.blackCircle{
+    border: 1px solid $dark;
+    background-color: $dark;
+}
+
+/* Media query for screens that are 1000px or less */
+@media screen and (max-width: 1000px) {
+    .iconList{
+        display: none;
+    }
+
+    .watchImgContainer{
+        width: 100%;
+    }
+}

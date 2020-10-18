@@ -6,6 +6,7 @@ import { faMobileAlt, faLaptop, faClock } from '@fortawesome/free-solid-svg-icon
 import Media from 'react-media';
 import HomeTab from '../components/tabs/HomeTab';
 import PhoneTab from '../components/tabs/PhoneTab';
+import WatchTab from '../components/tabs/WatchTab';
 
 export default function HomePage() {
 
@@ -26,6 +27,7 @@ export default function HomePage() {
             case('macbook'):
                 break;        
             case('watch'):
+                component = <WatchTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
                 break;
             default:
                 component = <HomeTab onSetActiveTab={onSetActiveTab} />

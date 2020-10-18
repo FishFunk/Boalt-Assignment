@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.padding40 {
+    padding: 40px;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.spaceEvenly {
+    justify-content: space-evenly;
+}
+
+.flexWrap {
+    flex-wrap: wrap;
+}
+
+.title {
+    font-size: 56px;
+    font-weight: bold;
+    max-width: 400px;
+    margin: 0;
+    line-height: 1.2em;
+}
+
+.label{
+    color: $red;
+    font-weight: bold;
+}
+
+.info {
+    font-size: 14px;
+    max-width: 350px;
+    color: $gray;
+}
+
+.shipDate {
+    color: $red;
+}
+
+.mainAppleLogo {
+    margin-left: 300px;
+    color: $lighter-gray;
+    opacity: 0.5;
+    font-size: 200px;
+    position: absolute;
+    z-index: -1;
+}
+
+.iconList{
+    width: 100px;
+    padding-top: 30vh;
+    text-align: center;
+    list-style-type: none;
+    color: $lighter-gray;
+    font-size: 20px;
+
+    li {
+        padding: 10px;
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+        &.active{
+            font-size: 25px;
+            color: $gray;
+        }
+    }
+}
+
+.price {
+    color: $lighter-gray;
+    margin: 0;
+}
+
+.buyNow{
+    font-size: 14px;
+    font-weight: bold;
+    color: $red;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+/* Media query for screens that are 499 or less */
+@media screen and (max-width: 499px) {
+    .iconList{
+        align-self: center;
+        width: 100%;
+        padding-top: 0;
+        li {
+            display: inline-block
+        }
+    }
+}
