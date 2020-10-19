@@ -42,12 +42,48 @@ code {
 /* Reusable Animations */
 @keyframes fadeInUp {
   from {
-      transform: translate3d(0,40px,0);
+      transform: translateY(40px);
       opacity: 0;
   }
 
   to {
-      transform: translate3d(0,0,0);
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+      transform: translateX(-40px);
+      opacity: 0;
+  }
+
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+      transform: translateX(40px);
+      opacity: 0;
+  }
+
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      transform: translateY(-40px);
+      opacity: 0;
+  }
+
+  to {
+      transform: translateY(0);
       opacity: 1;
   }
 }
@@ -70,9 +106,23 @@ code {
 }
 
 .fadeInUp {
-  opacity: 0;
   animation-name: fadeInUp;
   -webkit-animation-name: fadeInUp;
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+  -webkit-animation-name: fadeInRight;
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  -webkit-animation-name: fadeInLeft;
 }
 
 .animationDelay {

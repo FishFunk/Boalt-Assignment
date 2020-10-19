@@ -25,7 +25,7 @@ export default function MacbookTab(props) {
         <div className={styles.container}>
             <div className={`${styles.row} ${styles.darkGradient}`}>
                 <div className={`${styles.col} ${styles.grow}`}>
-                    <div className={`${styles.grow} ${styles.padding40}`}>
+                    <div className={`${styles.grow} ${styles.padding40} animated fadeInLeft`}>
                         <h2 className={styles.label}>Macbook Pro</h2>
                         <p className={styles.shipDate}>Starts shipping {shipDate}</p>
                         <h1 className={styles.title}>More power. More pro</h1>
@@ -45,7 +45,7 @@ export default function MacbookTab(props) {
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.col} ${styles.grow}`}>
+                <div className={`${styles.col} ${styles.grow}  animated fadeInRight`}>
                     <img 
                         className={styles.macbookImg} 
                         src={require('../../assets/images/shutterstock_-1.png')}>
@@ -53,19 +53,19 @@ export default function MacbookTab(props) {
                 </div>
             </div>
             <div className={`${styles.row}`}>
-                <div className={`${styles.col} ${styles.padding40}`}>
+                <div className={`${styles.col} ${styles.padding40} animated fadeInLeft`}>
                     <a className={styles.buyNow}>
                         Buy now 
                         &nbsp;
                         <FontAwesomeIcon icon={faChevronRight} />
                     </a>
                 </div>
-                <div className={`${styles.col}`}>
+                <div className={`${styles.col} animated fadeInUp`}>
                     <img 
                         className={styles.desktopImg} 
                         src={require('../../assets/images/shutterstock_734777938.png')}></img>
                 </div>
-                <div className={`${styles.col} ${styles.subscribePanel} ${styles.padding40}`}>
+                <div className={`${styles.col} ${styles.subscribePanel} ${styles.padding40}  animated fadeInDown`}>
                     <h2>Subscribe Now</h2>
                     <div className={`${styles.form}`}>
                         <input 

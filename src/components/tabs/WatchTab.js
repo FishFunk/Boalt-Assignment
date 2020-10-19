@@ -31,7 +31,7 @@ export default function WatchTab(props) {
         <div className={styles.container}>
             <div className={`${styles.row} ${styles.grow} ${styles.flexWrap}`}>
                 <div className={`${styles.col} ${styles.grow}`}>
-                    <div className={`grayGradient ${styles.grow} ${styles.padding40}`}>
+                    <div className={`grayGradient ${styles.grow} ${styles.padding40} animated fadeInLeft`}>
                         <FontAwesomeIcon icon={faApple} className={styles.mainAppleLogo}/>
                         <div className={styles.row}>
                             <h2 className={styles.label}>Apple Watch</h2>
@@ -50,7 +50,7 @@ export default function WatchTab(props) {
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.col} ${styles.watchImgContainer}`}>
+                <div className={`${styles.col} ${styles.watchImgContainer} animated fadeInRight`}>
                     <div className={`${styles.row} ${styles.watchImgContainer}`}>
                         {
                             leftImgActive ?
@@ -66,7 +66,7 @@ export default function WatchTab(props) {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.row} ${styles.spaceBetween}`}>
+            <div className={`${styles.row} ${styles.spaceBetween} animated fadeInUp`}>
                 <div className={`${styles.padding40} ${styles.grow}`}>
                     <h1 className={styles.price}>From $699</h1>
                     <a className={styles.buyNow}>
