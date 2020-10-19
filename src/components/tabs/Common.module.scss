@@ -50,22 +50,25 @@
 .label{
     color: $red;
     font-weight: bold;
+    margin: 0;
 }
 
 .info {
+    font-weight: normal;
     font-size: 14px;
     max-width: 350px;
     color: $gray;
 }
 
 .shipDate {
+    font-size: 12px;
     color: $red;
 }
 
 .mainAppleLogo {
-    margin: 0 300px;
+    margin: 0 340px;
     color: $lighter-gray;
-    opacity: 0.5;
+    opacity: 0.3;
     font-size: 200px;
     position: absolute;
     z-index: -1;
@@ -86,16 +89,21 @@
     }
 }
 
-/* Media query for screens that are 699px or less */
-@media screen and (max-width: 699px) {
+/* Media query for screens that are 799px or less */
+@media screen and (max-width: 799px) {
     .title {
         font-size: 46px;
+        max-width: 300px;
+    }
+    .info {
+        max-width: 300px;
     }
     .padding{
         padding: 10px;
     }
 
     .mainAppleLogo {
-        margin: 0 100px;
+        margin: 0 150px;
+        font-size: 150px;
     }
 }

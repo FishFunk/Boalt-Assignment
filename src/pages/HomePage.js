@@ -9,8 +9,11 @@ import PhoneTab from '../components/tabs/PhoneTab';
 import WatchTab from '../components/tabs/WatchTab';
 import MacbookTab from '../components/tabs/MacbookTab';
 import { tabNames } from '../Constants';
+import { useHistory } from 'react-router-dom';
 
 export default function HomePage() {
+
+    let history = useHistory();
 
     // tab options - home, phone, macbook, watch - default is home
     let [activeTab, setActiveTab] = useState(tabNames.home);
@@ -43,12 +46,16 @@ export default function HomePage() {
         return activeTab === tabName;
     }
 
+    function goToWelcomePage(){
+        history.push('/welcome');
+    }
+
     return (
     <div className='container'>
         <header className={styles.homeHeader}>
             <div 
                 className={`animated ${styles.headerLogoWrapper} ${styles.shrinkLeft}`} 
-                onClick={onSetActiveTab.bind(this, tabNames.home)}>
+                onClick={goToWelcomePage}>
                 <FontAwesomeIcon icon={faApple} className={styles.headerLogo} size='2x' />
             </div>
             <div className={`animated ${styles.flyInRight}`}>

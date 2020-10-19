@@ -41,24 +41,14 @@
 
 /* Media queries */
 @media screen and (max-width: 1072px) {
-    .title {
-        font-size: 46px;
-    }
-    .padding{
-        padding: 10px;
-    }
-
     .phoneImg {
-        right: 60px;
-        top: 10px;
-        width: 160px;
-    }
-    .mainAppleLogo {
-        margin: 0 200px;
+        right: 80px;
+        top: 20px;
+        width: 200px;
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 799px) {
     .title {
         font-size: 32px;
     }
@@ -73,20 +63,23 @@
     }
 
     .phoneImg {
-        right: 10px;
+        right: 40px;
         top: 10px;
-        width: 120px;
+        width: 100px;
+    }
+    .frontBackImg{
+        width: 60px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .phoneImg {
-        display: none;
-    }
-    .leftActiveImgIndicator{
-        display: none;
-    }
-    .rightActiveImgIndicator{
-        display: none;
-    }
-}
+// @media screen and (max-width: 480px) {
+//     .phoneImg {
+//         display: none;
+//     }
+//     .leftActiveImgIndicator{
+//         display: none;
+//     }
+//     .rightActiveImgIndicator{
+//         display: none;
+//     }
+// }

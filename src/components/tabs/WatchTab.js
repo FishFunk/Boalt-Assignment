@@ -46,8 +46,8 @@ export default function WatchTab(props) {
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.col} ${styles.watchImgContainer} animated fadeInRight`}>
-                    <div className={`${styles.row} ${styles.watchImgContainer}`}>
+                <div className={`${styles.col} animated fadeInRight`}>
+                    <div className={`${styles.row}`}>
                         {
                             leftImgActive ?
                                 <img 
@@ -62,7 +62,7 @@ export default function WatchTab(props) {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.row} ${styles.spaceBetween} animated fadeInUp`}>
+            <div className={`${styles.row} ${styles.userActionRow} animated fadeInUp`}>
                 <div className={`${styles.padding} ${styles.grow}`}>
                     <h1 className={styles.price}>From $699</h1>
                     <a className={styles.buyNow}>

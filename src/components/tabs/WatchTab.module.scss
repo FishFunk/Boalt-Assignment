@@ -1,12 +1,10 @@
 @import '../../theme';
 @import './Common.module.scss';
 
-.watchImgContainer{
-    justify-content: center;
-    margin-right: 50px;
-}
-
 .watchImg {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     width: 300px;
 }
 
@@ -67,9 +65,14 @@
     background-color: $dark;
 }
 
-// /* Media query for screens that are 1000px or less */
-// @media screen and (max-width: 1000px) {
-//     .watchImgContainer{
-//         width: 100%;
-//     }
-// }
+/* Media query for screens that are 1000px or less */
+@media screen and (max-width: 799px) {
+    .userActionRow {
+        padding-right: 40px;
+    }
+    .watchImg {
+        top: 40px;
+        right: 10px;
+        width: 200px;
+    }
+}
