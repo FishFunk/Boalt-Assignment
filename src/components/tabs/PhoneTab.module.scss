@@ -1,15 +1,12 @@
 @import '../../theme';
 @import './Common.module.scss';
 
-.phoneImgContainer{
-    text-align: center;
-    max-width: 500px;
-    width: auto;
-    margin-right: 50px;
-}
-
 .phoneImg {
-    width: 300px;
+    right: 100px;
+    top: 50px;
+    position: absolute;
+    max-width: 280px;
+    animation-duration: 0.4s;
 }
 
 .frontBackImg{
@@ -39,5 +36,57 @@
 
     &.active{
         background-color: $red;
+    }
+}
+
+/* Media queries */
+@media screen and (max-width: 1072px) {
+    .title {
+        font-size: 46px;
+    }
+    .padding{
+        padding: 10px;
+    }
+
+    .phoneImg {
+        right: 60px;
+        top: 10px;
+        width: 160px;
+    }
+    .mainAppleLogo {
+        margin: 0 200px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .title {
+        font-size: 32px;
+    }
+    .mainAppleLogo {
+        margin: 0 150px;
+    }
+    .info {
+        font-size: 12px;
+    }
+    .padding{
+        padding: 10px;
+    }
+
+    .phoneImg {
+        right: 10px;
+        top: 10px;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .phoneImg {
+        display: none;
+    }
+    .leftActiveImgIndicator{
+        display: none;
+    }
+    .rightActiveImgIndicator{
+        display: none;
     }
 }

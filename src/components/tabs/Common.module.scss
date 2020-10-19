@@ -66,7 +66,7 @@
     margin: 0 300px;
     color: $lighter-gray;
     opacity: 0.5;
-    font-size: 300px;
+    font-size: 200px;
     position: absolute;
     z-index: -1;
 }
@@ -86,8 +86,8 @@
     }
 }
 
-/* Media query for screens that are 499px or less */
-@media screen and (max-width: 499px) {
+/* Media query for screens that are 699px or less */
+@media screen and (max-width: 699px) {
     .title {
         font-size: 46px;
     }

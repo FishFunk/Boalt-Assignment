@@ -10,6 +10,9 @@ export default function PhoneTab(props) {
 
     let [shipDate, setShipDate] = useState('');
     let [leftImgActive, setLeftImgActive] = useState(true);
+    let [leftSmallImgActive, setLeftSmallImgActive] = useState(true);
+    let [leftImgAnimation, setLeftAnimation]= useState('fadeInRight');
+    let [rightImgAnimation, setRightAnimation]= useState('');
 
     useEffect(()=>{
         ApiService.getShippingDates()
@@ -20,7 +23,29 @@ export default function PhoneTab(props) {
     }, []);
 
     function setActiveImg(bool){
-        setLeftImgActive(bool);
+        if(bool){
+            // Setting left image to current
+            setLeftSmallImgActive(true);
+            setRightAnimation('fadeOut');
+        } else {
+            // Animate to right image
+            setLeftSmallImgActive(false);
+            setLeftAnimation('fadeOut');
+        }
+    }
+
+    function leftImgAnimationDone(){
+        if(leftImgAnimation === 'fadeOut'){
+            setRightAnimation('fadeInRight');
+            setLeftImgActive(false);
+        }
+    }
+
+    function rightImgAnimationDone(){
+        if(rightImgAnimation === 'fadeOut'){
+            setLeftAnimation('fadeInRight');
+            setLeftImgActive(true);
+        }
     }
 
     return (
@@ -42,7 +67,7 @@ export default function PhoneTab(props) {
                         <span className={styles.shipDate}>Starts shipping {shipDate}</span>
                     </div>
                 </div>
-                <div className={`${styles.row} ${styles.spaceBetween}`}>
+                <div className={`${styles.row} ${styles.padding}`}>
                     <div className={styles.padding}>
                         <h1 className={styles.price}>From $699</h1>
                         <a className={styles.buyNow}>
@@ -53,34 +78,54 @@ export default function PhoneTab(props) {
                     </div>
                     <div className={styles.padding}>
                         <div className={styles.row}>
-                            <img 
-                                onClick={setActiveImg.bind(this, true)}
-                                className={styles.frontBackImg}
-                                src={require('../../assets/images/apple-iphonexs-max-gold.png')}>
-                            </img>
-                            <img 
-                                onClick={setActiveImg.bind(this, false)}
-                                className={styles.frontBackImg}
-                                src={require('../../assets/images/apple-iphonexs-max-gold-back-3.png')}>
-                            </img>
+                        {
+                            // Front Side Image
+                            leftSmallImgActive ?
+                                <img 
+                                    onClick={setActiveImg.bind(this, true)}
+                                    className={styles.frontBackImg}
+                                    src={require('../../assets/images/apple-iphonexs-max-gold.png')}>
+                                </img> : 
+                                <img 
+                                    onClick={setActiveImg.bind(this, true)}
+                                    className={styles.frontBackImg}
+                                    src={require('../../assets/images/apple-iphonexs-max-gold-1.png')}>
+                                </img>
+                        }
+                        {
+                            // Back Side Image
+                            leftSmallImgActive ?
+                                <img 
+                                    onClick={setActiveImg.bind(this, false)}
+                                    className={styles.frontBackImg}
+                                    src={require('../../assets/images/apple-iphonexs-max-gold-back-1.png')}>
+                                </img> : 
+                                <img 
+                                    onClick={setActiveImg.bind(this, false)}
+                                    className={styles.frontBackImg}
+                                    src={require('../../assets/images/apple-iphonexs-max-gold-back-3.png')}>
+                                </img>
+                        }
                         </div>
                         <div className={styles.row}>
-                            <div className={`${styles.leftActiveImgIndicator} ${leftImgActive ? styles.active : ''}`}></div>
-                            <div className={`${styles.rightActiveImgIndicator} ${leftImgActive ? '' : styles.active}`}></div>
+                            <div className={`${styles.leftActiveImgIndicator} ${leftSmallImgActive ? styles.active : ''}`}></div>
+                            <div className={`${styles.rightActiveImgIndicator} ${leftSmallImgActive ? '' : styles.active}`}></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className={`${styles.col} animated fadeInUp`}>
-                <div className={`${styles.row} ${styles.phoneImgContainer}`}>
+                <div className={`${styles.row}`}>
                     {
                         leftImgActive ?
                             <img 
-                                className={styles.phoneImg} 
+                                onAnimationEnd={leftImgAnimationDone}
+                                className={`${styles.phoneImg} animated ${leftImgAnimation}`}
                                 src={require('../../assets/images/Iphone 1@2x.png')}>
                             </img> :
                             <img 
-                                className={styles.phoneImg} 
+                                onAnimationEnd={rightImgAnimationDone}
+                                className={`${styles.phoneImg} animated ${rightImgAnimation}`}
                                 src={require('../../assets/images/apple-iphonexs-max-gold-back-2.png')}>
                             </img> 
                     }
