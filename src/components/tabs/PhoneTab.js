@@ -108,8 +108,14 @@ export default function PhoneTab(props) {
                         }
                         </div>
                         <div className={styles.row}>
-                            <div className={`${styles.leftActiveImgIndicator} ${leftSmallImgActive ? styles.active : ''}`}></div>
-                            <div className={`${styles.rightActiveImgIndicator} ${leftSmallImgActive ? '' : styles.active}`}></div>
+                            <div 
+                                onClick={setActiveImg.bind(this, true)}
+                                className={`${styles.leftActiveImgIndicator} 
+                                ${leftSmallImgActive ? styles.active : ''}`}></div>
+                            <div 
+                                onClick={setActiveImg.bind(this, false)}
+                                className={`${styles.rightActiveImgIndicator} 
+                                ${leftSmallImgActive ? '' : styles.active}`}></div>
                         </div>
                     </div>
                 </div>

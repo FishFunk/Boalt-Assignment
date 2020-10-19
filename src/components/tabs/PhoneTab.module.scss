@@ -26,6 +26,10 @@
     &.active{
         background-color: $red;
     }
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .rightActiveImgIndicator{
@@ -36,6 +40,10 @@
 
     &.active{
         background-color: $red;
+    }
+
+    &:hover{
+        cursor: pointer;
     }
 }
 
@@ -72,14 +80,14 @@
     }
 }
 
-// @media screen and (max-width: 480px) {
-//     .phoneImg {
-//         display: none;
-//     }
-//     .leftActiveImgIndicator{
-//         display: none;
-//     }
-//     .rightActiveImgIndicator{
-//         display: none;
-//     }
-// }
+@media screen and (max-width: 480px) {
+    .phoneImg {
+        display: none;
+    }
+    .leftActiveImgIndicator{
+        display: none;
+    }
+    .rightActiveImgIndicator{
+        display: none;
+    }
+}
