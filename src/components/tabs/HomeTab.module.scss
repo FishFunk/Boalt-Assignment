@@ -1,4 +1,5 @@
 @import '../../theme';
+@import './Common.module.scss';
 
 .content {
     display: flex;
@@ -15,21 +16,18 @@
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
     text-align: center;
     justify-content: center;
-    width: 100%;
 }
 
 .title {
-    font-weight: bold;
-    font-size: 50px;
+    max-width: 500px;
+    font-size: 45px;
 }
 
 .productLink {
     position: absolute;
-    margin-top: 15px;
+    margin-top: 20%;
     color: $primary;
     font-size: 18px;
     &:hover{
@@ -42,7 +40,8 @@
 
 .iconList {
     position: absolute;
-    transform: translateY(40px);
+    // transform: translateY(40px);
+    margin-top: 40%;
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
@@ -63,5 +62,6 @@
     position: absolute;
     margin: auto;
     color: $lighter-gray;
-    font-size: 200px;
+    opacity: 0.5;
+    font-size: 250px;
 }

@@ -20,30 +20,26 @@ export default function WelcomePage() {
             <FontAwesomeIcon icon={faApple} className={styles.headerAppleLogo} size='2x' />
         </header>   
         <div className={`primaryGradient animated ${styles.content} ${styles.squeeze}`}>
-            <div className='animated fadeInUp'>
-                <div className={styles.row}>
-                    <FontAwesomeIcon icon={faApple} className={styles.mainAppleLogo}/>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.counter}>
-                        <CountUp
-                            start={48}
-                            end={20}
-                            duration={1.5} 
-                            useEasing={true}
-                        />
-                        <CountUp
-                            start={75}
-                            end={19}
-                            duration={1.5} 
-                            useEasing={false}
-                        />
-                    </div>
+            <div className={styles.counterContainer}>
+                <div className={`${styles.counter} animated fadeInUp`}>
+                    <CountUp
+                        start={48}
+                        end={20}
+                        duration={1.5} 
+                        useEasing={true}
+                    />
+                    <CountUp
+                        start={75}
+                        end={19}
+                        duration={1.5} 
+                        useEasing={false}
+                    />
                 </div>
             </div>
-        </div>
-        <div className={`${styles.absoluteCenterTextContainer} animated fadeInUp`}>
-            <text className={styles.centerText}>New Products Coming This Summer</text>
+            <div className={`${styles.centerContainer} animated fadeInUp`}>
+                <FontAwesomeIcon icon={faApple} className={`${styles.mainAppleLogo}`}/>
+                <text className={`${styles.centerText} animated fadeInUp animationDelay`}>New Products Coming This Summer</text>
+            </div>
         </div>
     </div>);
 }
