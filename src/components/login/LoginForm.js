@@ -1,3 +1,10 @@
+// **********
+// Functional component rendering an email and password login form
+// with validation checks
+// 
+// props: { loading: boolean, onSubmit: ({email: string, pwd: string})=> any }
+// *********
+
 import React, { useState } from 'react';
 import styles from './Form.module.scss';
 import Loader from 'react-loader-spinner';

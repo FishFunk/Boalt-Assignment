@@ -1,20 +1,14 @@
 @import '../../theme';
 
 .menu {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    width: 100px;
-    height: 100%;
+    position: fixed;
+    top: 50%;
+    right: 20px;
 }
 
 .menuItems {
     list-style-type: none;
     text-align: center;
-    justify-content: center;
-    align-content: center;
     color: $lighter-gray;
     font-size: 20px;
 

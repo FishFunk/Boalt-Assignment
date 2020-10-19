@@ -3,6 +3,7 @@ import styles from './HomeTab.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faLaptop, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faApple } from '@fortawesome/free-brands-svg-icons';
+import { tabNames } from '../../Constants';
 
 export default function HomeTab(props) {
 
@@ -18,13 +19,13 @@ export default function HomeTab(props) {
                 </div>
                 <div className={styles.row}>
                     <ul className={styles.iconList}>
-                        <li onClick={props.onSetActiveTab.bind(this, 'phone')}>
+                        <li onClick={props.onSetActiveTab.bind(this, tabNames.phone)}>
                             <FontAwesomeIcon icon={faMobileAlt} />
                         </li>
-                        <li onClick={props.onSetActiveTab.bind(this, 'macbook')}>
+                        <li onClick={props.onSetActiveTab.bind(this, tabNames.macbook)}>
                             <FontAwesomeIcon icon={faLaptop} />
                         </li>
-                        <li onClick={props.onSetActiveTab.bind(this, 'watch')}>
+                        <li onClick={props.onSetActiveTab.bind(this, tabNames.watch)}>
                             <FontAwesomeIcon icon={faClock} />
                         </li>
                     </ul>

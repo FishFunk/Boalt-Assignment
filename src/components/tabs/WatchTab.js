@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './WatchTab.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileAlt, faLaptop, faClock, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faApple } from '@fortawesome/free-brands-svg-icons';
 import ApiService from '../../services/ApiService';
 import IconMenu from './IconMenu';
@@ -19,10 +19,6 @@ export default function WatchTab(props) {
         .catch(error => console.error(error));
     }, []);
 
-    function isTabActive(tabName){
-        return props.activeTab === tabName;
-    }
-
     function setActiveImg(bool){
         setLeftImgActive(bool);
     }
@@ -31,7 +27,7 @@ export default function WatchTab(props) {
         <div className={styles.container}>
             <div className={`${styles.row} ${styles.grow} ${styles.flexWrap}`}>
                 <div className={`${styles.col} ${styles.grow}`}>
-                    <div className={`grayGradient ${styles.grow} ${styles.padding40} animated fadeInLeft`}>
+                    <div className={`grayGradient ${styles.grow} ${styles.padding} animated fadeInLeft`}>
                         <FontAwesomeIcon icon={faApple} className={styles.mainAppleLogo}/>
                         <div className={styles.row}>
                             <h2 className={styles.label}>Apple Watch</h2>
@@ -67,7 +63,7 @@ export default function WatchTab(props) {
                 </div>
             </div>
             <div className={`${styles.row} ${styles.spaceBetween} animated fadeInUp`}>
-                <div className={`${styles.padding40} ${styles.grow}`}>
+                <div className={`${styles.padding} ${styles.grow}`}>
                     <h1 className={styles.price}>From $699</h1>
                     <a className={styles.buyNow}>
                         Buy now 
@@ -75,7 +71,7 @@ export default function WatchTab(props) {
                         <FontAwesomeIcon icon={faChevronRight} />
                     </a>
                 </div>
-                <div className={`${styles.padding40} ${styles.grow}`}>
+                <div className={`${styles.padding} ${styles.grow}`}>
                     <div className={`${styles.row} ${styles.spaceEvenly}`}>
                         <div className={styles.col} onClick={setActiveImg.bind(this, true)}>
                             <div className={`${styles.radio} ${leftImgActive ? styles.active : ''}`}>

@@ -1,3 +1,7 @@
+// **********
+// Utility class for interfacing with local storage
+// *********
+
 class LocalStorageService {
     constructor(){
         if(!localStorage){

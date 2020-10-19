@@ -1,3 +1,7 @@
+// **********
+// Functional component that handles app routing
+// *********
+
 import React from "react";
 import {
   BrowserRouter as Router,

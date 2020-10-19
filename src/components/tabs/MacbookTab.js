@@ -25,7 +25,7 @@ export default function MacbookTab(props) {
         <div className={styles.container}>
             <div className={`${styles.row} ${styles.darkGradient} ${styles.flexWrap}`}>
                 <div className={`${styles.col} ${styles.grow}`}>
-                    <div className={`${styles.grow} ${styles.padding40} animated fadeInLeft`}>
+                    <div className={`${styles.grow} ${styles.padding} animated fadeInLeft`}>
                         <h2 className={styles.label}>Macbook Pro</h2>
                         <p className={styles.shipDate}>Starts shipping {shipDate}</p>
                         <h1 className={styles.title}>More power. More pro</h1>
@@ -53,7 +53,7 @@ export default function MacbookTab(props) {
                 </div>
             </div>
             <div className={`${styles.row} ${styles.flexWrap} animated fadeInUp`}>
-                <div className={`${styles.col} ${styles.padding40}`}>
+                <div className={`${styles.col} ${styles.padding}`}>
                     <a className={styles.buyNow}>
                         Buy now 
                         &nbsp;
@@ -69,7 +69,7 @@ export default function MacbookTab(props) {
                     ${styles.col} 
                     ${styles.grow} 
                     ${styles.subscribePanel} 
-                    ${styles.padding40}`}>
+                    ${styles.padding}`}>
                     <h2>Subscribe Now</h2>
                     <div className={`${styles.form}`}>
                         <input 

@@ -1,3 +1,8 @@
+// **********
+// Class for calling external APIs
+// *********
+
+
 class ApiService {
     // Get shipping date JSON
     // Example response: '{"iphone":"2020/02/21","mackbook":"2020/08/04","watch":"2020/11/16"}'

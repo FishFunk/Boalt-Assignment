@@ -19,10 +19,6 @@ export default function PhoneTab(props) {
         .catch(error => console.error(error));
     }, []);
 
-    function isTabActive(tabName){
-        return props.activeTab === tabName;
-    }
-
     function setActiveImg(bool){
         setLeftImgActive(bool);
     }
@@ -30,7 +26,7 @@ export default function PhoneTab(props) {
     return (
         <div className={styles.container}>
             <div className={`${styles.col} ${styles.grow} animated fadeInUp`}>
-                <div className={`grayGradient ${styles.grow} ${styles.padding40} animated fadeInUp`}>
+                <div className={`grayGradient ${styles.grow} ${styles.padding} animated fadeInUp`}>
                     <FontAwesomeIcon icon={faApple} className={styles.mainAppleLogo}/>
                     <div className={styles.row}>
                         <h2 className={styles.label}>iPhone</h2>
@@ -47,7 +43,7 @@ export default function PhoneTab(props) {
                     </div>
                 </div>
                 <div className={`${styles.row} ${styles.spaceBetween}`}>
-                    <div className={styles.padding40}>
+                    <div className={styles.padding}>
                         <h1 className={styles.price}>From $699</h1>
                         <a className={styles.buyNow}>
                             Buy now 
@@ -55,7 +51,7 @@ export default function PhoneTab(props) {
                             <FontAwesomeIcon icon={faChevronRight} />
                         </a>
                     </div>
-                    <div className={styles.padding40}>
+                    <div className={styles.padding}>
                         <div className={styles.row}>
                             <img 
                                 onClick={setActiveImg.bind(this, true)}

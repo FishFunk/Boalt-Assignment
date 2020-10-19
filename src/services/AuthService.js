@@ -1,3 +1,7 @@
+// **********
+// Class for handling user authentication
+// *********
+
 import localStorageService from './LocalStorageService';
 import { localStorageKeys } from '../Constants';
 

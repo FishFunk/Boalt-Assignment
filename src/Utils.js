@@ -1,3 +1,5 @@
+// File to organize common utility functions
+
 export const validateEmail = (value)=> {
     let error;
     if (!value) {

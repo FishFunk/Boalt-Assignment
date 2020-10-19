@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
 .row {
@@ -15,7 +15,7 @@
     flex-direction: column;
 }
 
-.padding40 {
+.padding {
     padding: 40px;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .mainAppleLogo {
-    margin-left: 300px;
+    margin: 0 250px;
     color: $lighter-gray;
     opacity: 0.5;
     font-size: 200px;
@@ -83,5 +83,12 @@
     &:hover{
         cursor: pointer;
         text-decoration: underline;
+    }
+}
+
+/* Media query for screens that are 399px or less */
+@media screen and (max-width: 399px) {
+    .padding{
+        padding: 10px;
     }
 }

@@ -8,11 +8,12 @@ import HomeTab from '../components/tabs/HomeTab';
 import PhoneTab from '../components/tabs/PhoneTab';
 import WatchTab from '../components/tabs/WatchTab';
 import MacbookTab from '../components/tabs/MacbookTab';
+import { tabNames } from '../Constants';
 
 export default function HomePage() {
 
-    // tab options - home, phone, macbook, watch
-    let [activeTab, setActiveTab] = useState('home');
+    // tab options - home, phone, macbook, watch - default is home
+    let [activeTab, setActiveTab] = useState(tabNames.home);
 
     function onSetActiveTab(tabName){
         setActiveTab(tabName);
@@ -22,13 +23,13 @@ export default function HomePage() {
         let component;
 
         switch(activeTab){
-            case('phone'):
+            case(tabNames.phone):
                 component = <PhoneTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
                 break;
-            case('macbook'):
+            case(tabNames.macbook):
                 component = <MacbookTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
                 break;        
-            case('watch'):
+            case(tabNames.watch):
                 component = <WatchTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
                 break;
             default:
@@ -47,7 +48,7 @@ export default function HomePage() {
         <header className={styles.homeHeader}>
             <div 
                 className={`animated ${styles.headerLogoWrapper} ${styles.shrinkLeft}`} 
-                onClick={onSetActiveTab.bind(this, 'home')}>
+                onClick={onSetActiveTab.bind(this, tabNames.home)}>
                 <FontAwesomeIcon icon={faApple} className={styles.headerLogo} size='2x' />
             </div>
             <div className={`animated ${styles.flyInRight}`}>
@@ -56,16 +57,16 @@ export default function HomePage() {
                     {matches =>
                         matches.small ? (
                             <ul className={styles.nav}>
-                                <li className={`${styles.navItem} ${isTabActive('phone') ? styles.active : ''}`} 
-                                    onClick={onSetActiveTab.bind(this, 'phone')}>
+                                <li className={`${styles.navItem} ${isTabActive(tabNames.phone) ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, tabNames.phone)}>
                                     <FontAwesomeIcon icon={faMobileAlt} />
                                 </li>
-                                <li className={`${styles.navItem} ${isTabActive('macbook') ? styles.active : ''}`}
-                                    onClick={onSetActiveTab.bind(this, 'macbook')}>
+                                <li className={`${styles.navItem} ${isTabActive(tabNames.macbook) ? styles.active : ''}`}
+                                    onClick={onSetActiveTab.bind(this, tabNames.macbook)}>
                                     <FontAwesomeIcon icon={faLaptop} />
                                 </li>
-                                <li className={`${styles.navItem} ${isTabActive('watch') ? styles.active : ''}`} 
-                                    onClick={onSetActiveTab.bind(this, 'watch')}>
+                                <li className={`${styles.navItem} ${isTabActive(tabNames.watch) ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, tabNames.watch)}>
                                     <FontAwesomeIcon icon={faClock} />
                                 </li>
                                 <li className={styles.navItem}>
@@ -74,16 +75,16 @@ export default function HomePage() {
                             </ul>
                         ) : (
                             <ul className={styles.nav}>
-                                <li className={`${styles.navItem} ${isTabActive('phone') ? styles.active : ''}`} 
-                                    onClick={onSetActiveTab.bind(this, 'phone')}>
+                                <li className={`${styles.navItem} ${isTabActive(tabNames.phone) ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, tabNames.phone)}>
                                     <a>iPhone</a>
                                 </li>
-                                <li className={`${styles.navItem} ${isTabActive('macbook') ? styles.active : ''}`}
-                                    onClick={onSetActiveTab.bind(this, 'macbook')}>
+                                <li className={`${styles.navItem} ${isTabActive(tabNames.macbook) ? styles.active : ''}`}
+                                    onClick={onSetActiveTab.bind(this, tabNames.macbook)}>
                                     <a>MacBook Pro</a>
                                 </li>
-                                <li className={`${styles.navItem} ${isTabActive('watch') ? styles.active : ''}`} 
-                                    onClick={onSetActiveTab.bind(this, 'watch')}>
+                                <li className={`${styles.navItem} ${isTabActive(tabNames.watch) ? styles.active : ''}`} 
+                                    onClick={onSetActiveTab.bind(this, tabNames.watch)}>
                                     <a>Watch</a>
                                 </li>
                                 <li className={styles.navItem}>
