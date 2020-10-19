@@ -1,0 +1,110 @@
+@import '../../theme';
+@import './Common.module.scss';
+@import '../login//Form.module.scss';
+
+.darkGradient{
+    background: $dark
+}
+
+.macbookImg{
+    height: 100%;
+    min-width: 500px;
+    max-width: 500px;
+    background:
+     linear-gradient(90deg, $dark, $white, $dark);
+}
+
+.label {
+    color: $primary;
+}
+
+.title {
+    color: $white;
+}
+
+.spec {
+    color: $gray;
+    margin: 50px 100px 0 0;
+}
+
+.specLabel {
+    color: $gray;
+}
+
+.buyNow {
+    width: 150px;
+    color: $primary;
+}
+
+.input {
+    padding: 12px;
+    border: 1px solid $gray;
+    height: 20px;
+    margin: 10px 10px 0 0;
+}
+
+.form {
+    display: inline-block;
+}
+
+.subscribeBtn {
+    width: 140px;
+    height: 46px;
+    background-color: $dark;
+    // text-align: center;
+    font-weight: bold;
+    color: $white;
+    font-size: 14px;
+    outline: none;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+.subscribePanel {
+    transform: translateY(-20px);
+    background-color: $lighter-gray;
+    height: 200px;
+    h2 {
+        margin: 0;
+    }
+}
+
+.desktopImg {
+    transform: translateY(40px);
+    max-width: 400px;
+}
+
+// .menu {
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     position: absolute;
+//     right: 0;
+//     width: 100px;
+//     height: 100%;
+// }
+
+// .menuItems {
+//     list-style-type: none;
+//     text-align: center;
+//     justify-content: center;
+//     align-content: center;
+//     color: $lighter-gray;
+//     font-size: 20px;
+
+//     li {
+//         padding: 10px;
+
+//         &:hover {
+//             cursor: pointer;
+//             transform: translateY(-2px);
+//         }
+
+//         &.active{
+//             font-size: 25px;
+//             color: $gray;
+//         }
+//     }
+// }

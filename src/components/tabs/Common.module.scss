@@ -71,29 +71,6 @@
     z-index: -1;
 }
 
-.iconList{
-    width: 100px;
-    padding-top: 30vh;
-    text-align: center;
-    list-style-type: none;
-    color: $lighter-gray;
-    font-size: 20px;
-
-    li {
-        padding: 10px;
-
-        &:hover {
-            cursor: pointer;
-            transform: translateY(-2px);
-        }
-
-        &.active{
-            font-size: 25px;
-            color: $gray;
-        }
-    }
-}
-
 .price {
     color: $lighter-gray;
     margin: 0;
@@ -106,17 +83,5 @@
     &:hover{
         cursor: pointer;
         text-decoration: underline;
-    }
-}
-
-/* Media query for screens that are 499 or less */
-@media screen and (max-width: 499px) {
-    .iconList{
-        align-self: center;
-        width: 100%;
-        padding-top: 0;
-        li {
-            display: inline-block
-        }
     }
 }

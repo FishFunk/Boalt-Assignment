@@ -58,7 +58,7 @@
 
 .whiteCircle {
     border: 1px solid $dark;
-    background-color: $white-variant;
+    background-color: $white;
 }
 
 .blackCircle{
@@ -68,10 +68,6 @@
 
 /* Media query for screens that are 1000px or less */
 @media screen and (max-width: 1000px) {
-    .iconList{
-        display: none;
-    }
-
     .watchImgContainer{
         width: 100%;
     }

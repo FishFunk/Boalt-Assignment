@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PhoneTab.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileAlt, faLaptop, faClock, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faApple } from '@fortawesome/free-brands-svg-icons';
 import ApiService from '../../services/ApiService';
+import IconMenu from './IconMenu';
 
 export default function PhoneTab(props) {
 
@@ -16,7 +17,7 @@ export default function PhoneTab(props) {
             setShipDate(data.iphone);
         })
         .catch(error => console.error(error));
-    });
+    }, []);
 
     function isTabActive(tabName){
         return props.activeTab === tabName;
@@ -89,25 +90,7 @@ export default function PhoneTab(props) {
                     }
                 </div>
             </div>
-            <div className={`${styles.col} animated fadeInUp`}>
-                <ul className={`${styles.iconList}`}>
-                    <li
-                        className={`${isTabActive('phone') ? styles.active : ''}`} 
-                        onClick={props.onSetActiveTab.bind(this, 'phone')}>
-                        <FontAwesomeIcon icon={faMobileAlt} />
-                    </li>
-                    <li 
-                        className={`${isTabActive('macbook') ? styles.active : ''}`}
-                        onClick={props.onSetActiveTab.bind(this, 'macbook')}>
-                        <FontAwesomeIcon icon={faLaptop} />
-                    </li>
-                    <li 
-                        className={`${isTabActive('watch') ? styles.active : ''}`}
-                        onClick={props.onSetActiveTab.bind(this, 'watch')}>
-                        <FontAwesomeIcon icon={faClock} />
-                    </li>
-                </ul>
-            </div>
+            <IconMenu onSetActiveTab={props.onSetActiveTab} activeTab={props.activeTab} />
         </div>
     );
 }

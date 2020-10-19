@@ -7,6 +7,7 @@ import Media from 'react-media';
 import HomeTab from '../components/tabs/HomeTab';
 import PhoneTab from '../components/tabs/PhoneTab';
 import WatchTab from '../components/tabs/WatchTab';
+import MacbookTab from '../components/tabs/MacbookTab';
 
 export default function HomePage() {
 
@@ -25,6 +26,7 @@ export default function HomePage() {
                 component = <PhoneTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
                 break;
             case('macbook'):
+                component = <MacbookTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
                 break;        
             case('watch'):
                 component = <WatchTab activeTab={activeTab} onSetActiveTab={onSetActiveTab} />;
