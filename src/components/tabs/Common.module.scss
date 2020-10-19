@@ -63,7 +63,7 @@
 }
 
 .mainAppleLogo {
-    margin: 0 250px;
+    margin: 0 300px;
     color: $lighter-gray;
     opacity: 0.5;
     font-size: 200px;
@@ -86,9 +86,16 @@
     }
 }
 
-/* Media query for screens that are 399px or less */
-@media screen and (max-width: 399px) {
+/* Media query for screens that are 499px or less */
+@media screen and (max-width: 499px) {
+    .title {
+        font-size: 46px;
+    }
     .padding{
         padding: 10px;
+    }
+
+    .mainAppleLogo {
+        margin: 0 100px;
     }
 }
