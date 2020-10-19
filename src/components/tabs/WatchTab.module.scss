@@ -3,9 +3,9 @@
 
 .watchImg {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 300px;
+    top: 20px;
+    right: 6em;
+    width: 350px;
 }
 
 .leftActiveImgIndicator{
@@ -65,7 +65,21 @@
     background-color: $dark;
 }
 
-/* Media query for screens that are 1000px or less */
+/* Media queries */
+@media screen and (max-width: 1000px) {
+    .watchImg {
+        right: 5em;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    .watchImg {
+        right: 3em;
+        width: 250px;
+    }
+}
+
 @media screen and (max-width: 799px) {
     .userActionRow {
         padding-right: 40px;
