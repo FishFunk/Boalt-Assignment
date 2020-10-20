@@ -68,7 +68,7 @@ export default function RegisterForm(props) {
                 <label>Email</label>
                 <input 
                     type='email'
-                    className={emailError ? 'error': ''} 
+                    className={emailError ? styles.error: ''} 
                     placeholder='user@email.com' 
                     onChange={(e)=>setEmail(e.target.value)}
                     onFocus={()=>setEmailError('')}>
